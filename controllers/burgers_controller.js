@@ -14,7 +14,7 @@ var express = require("express");
 var burger = require("../models/burger.js");
 
 
-router.get("/", function(req, res) {
+router.get("/index", function(req, res) {
     burger.all(function(data) {
       var hbsObject = {
         burger : data
@@ -54,4 +54,8 @@ router.get("/", function(req, res) {
   
   // Export routes for server.js to use.
   module.exports = router;
+
+
+
+
   
