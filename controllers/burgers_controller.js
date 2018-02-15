@@ -14,7 +14,7 @@ var burger = require("../models/burger.js");
 var router = express.Router();
 
 
-router.get("/index", function(req, res) {
+router.get("/", function(req, res) {
     burger.all(function(data) {
       var burgers = {
          burgers : data
