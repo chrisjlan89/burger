@@ -1,32 +1,130 @@
 
 
-<ul>
-  {{#each burger}}
+
+
+
+<div class = "container-fluid">
+<div class ="row">
+<img src = "assets/img/burger.png">
+</div>
+
+<div class ="row">
+
+
+
+
+<div class = "col-md-3 offset-md-3 menu">
+    <h2> These burgers  be on the menu </h2>
+<ul class = "list-group">
+  {{#each burgers}}
     {{#unless devoured}}
-     
+     <li class = "list-group-item" id = "{{this.id}}">{{this.burger_name}} <button class = " btn btn-primary devour" id = "{{this.id}}"> Devour</button></li>
     {{/unless}}
   {{/each}}
 </ul>
+</div>
 
-<h2>Burgers That have been eatededed</h2>
+
+<div class = "col-md-3 offset-md-1 devoured-list">
+<h2> Eatededed Burgers</h2>
 
 <ul>
-  {{#each burger}}
+  {{#each burgers}}
     {{#if devoured}}
-    
+    <li class = "list-group-item" id = "{{this.id}}">{{this.burger_name}} </li>
     {{/if}}
   {{/each}}
 </ul>
+</div>
 
+</div>
+
+<div class = 'row'>
+<div class = "col-md-5 offset-md-4"    
+<div class = "burger-form-box">
 <h2>Add a burger</h2>
 <form class="create-form">
 
+
+
   <div class="form-group">
-    <label for="ca">Type of burger:</label>
-    <input type="text" id="ca" name="name">
+    <label for="burg"></label>
+    <textarea class="form-control" id="burg" rows="3"></textarea>
   </div>
 
 
 
-  <button type="submit">Add Burger</button>
+    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+</div>
+
+
+
+
+
+<script>
+
+   
+ 
+    
+    $.ajax({
+      method : "GET",
+      url : "/index"
+    }).done(function(data){
+       console.log("ajax req" , data);
+    });
+
+ 
+ $("#submit").on("click", function(event) {
+    event.preventDefault();
+    
+    var newBurger = {
+        burger_name : $("#burg").val().trim()
+       
+    }
+
+    $.ajax({
+     method : "POST",
+      url : "/api/burgers",
+      data : newBurger
+     }).then(
+         function() {
+        location.reload()
+         }
+     )
+
+    });    
+
+
+    $(".devour").on("click" , function(event){
+    event.preventDefault();
+     
+       var id  = this.id;
+       console.log("id" , id)
+       $.ajax({
+           method : "PUT",
+           url : "api/eaten/" + id 
+           
+       }).then(
+           function() {
+            location.reload()
+           }
+       )
+
+
+    });
+
+
+
+//    $.ajax({
+ //       method : "put",
+ //       url : "api/burgers"
+
+//    })
+ 
+</script>
+
+
+
+

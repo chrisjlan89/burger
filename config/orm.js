@@ -41,7 +41,6 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-.
 var orm = {
   all: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
@@ -73,13 +72,14 @@ var orm = {
     });
   },
  
-  update: function(table, objColVals, condition, cb) {
+  update: function(table, objColVals, id, cb) {
+    
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
+    queryString += " WHERE id = ";
+    queryString += id;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {

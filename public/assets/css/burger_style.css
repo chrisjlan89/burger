@@ -1,0 +1,36 @@
+
+body{
+    font-family: 'Cabin Sketch', cursive;
+    background-color: rgba(29, 238, 238, 0.781);
+}
+
+
+img{
+    margin : 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.devour{
+    float: right;
+    
+}
+
+
+
+
+
+li{
+    margin: 2%;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+
+
+
+
+ 
