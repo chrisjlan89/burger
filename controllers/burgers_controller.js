@@ -31,6 +31,8 @@ router.get("/", function(req, res) {
     });
   });
   
+  
+  
   router.put("/api/eaten/:id" , function(req, res) {
     var burgerId = req.params.id;
   
