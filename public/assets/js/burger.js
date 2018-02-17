@@ -1,3 +1,4 @@
+
  $("#submit").on("click", function(event) {
     event.preventDefault();
     
@@ -36,3 +37,25 @@
 
 
     });
+
+
+
+
+
+    // $.ajax({
+    //     method : "POST",
+    //      url : "/api/burgers",
+    //      data : newBurger
+    //     }).then(
+    //         function() {
+    //           $.ajax({
+    //            method : "GET",
+    //            url : "/",
+               
+    //             }).then(
+    //                    function(){
+                
+    //         }
+    //     )
+   
+    //    });    
