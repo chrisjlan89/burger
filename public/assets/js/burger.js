@@ -13,7 +13,8 @@
       data : newBurger
      }).then(
          function() {
-        location.reload()
+        location.reload();
+              
          }
      )
 
@@ -31,7 +32,7 @@
            
        }).then(
            function() {
-            location.reload()
+           location.reload();
            }
        )
 
@@ -43,19 +44,19 @@
 
 
     // $.ajax({
-    //     method : "POST",
-    //      url : "/api/burgers",
-    //      data : newBurger
-    //     }).then(
+    //      method : "POST",
+    //       url : "/api/burgers",
+    //       data : newBurger
+    //      }).then(
     //         function() {
     //           $.ajax({
     //            method : "GET",
     //            url : "/",
                
     //             }).then(
-    //                    function(){
+    //                   function(){
                 
     //         }
-    //     )
+    //      )
    
     //    });    

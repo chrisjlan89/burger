@@ -16,7 +16,7 @@
 <div class = "col-md-3 offset-md-3 menu">
     <h2> These burgers  be on the menu </h2>
 <ul class = "list-group">
-  {{#each burgers}}
+  {{#each burger_data}}
     {{#unless devoured}}
      <li class = "list-group-item" id = "{{this.id}}">{{this.burger_name}} <button class = " btn btn-primary devour" id = "{{this.id}}"> Devour</button></li>
     {{/unless}}
@@ -29,7 +29,7 @@
 <h2> Eatededed Burgers</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger_data}}
     {{#if devoured}}
     <li class = "list-group-item" id = "{{this.id}}">{{this.burger_name}} </li>
     {{/if}}
